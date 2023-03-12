@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QualityBeef</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+  <img src="C:\Users\Us\Desktop\SPTECH\Logo.png" alt="">
+  <h1>Simulador de investimentos</h1>
+  <h4>cerca de 30% de toda carne transportada encotra-se na temperatura incorreta para manter sua qualidade devida</h4>
+  <div class="container">
+    <div class="containerInner">
+      <h4>Insira o valor do preço/kg:</h4>
+      <input type="number" id="input_kg">
+      <h4>Insira a quantidade de kilos vendidos:</h4>
+      <input type="number" id="input_valor">
+      <h4>Insira o número de viagens feitas em um mês:</h4>
+      <input type="number" id="input_viagem"><br><br>
+      <button onclick="mensal()">Mensal</button>
+      <button onclick="semestral()">Semestral</button>
+      <button onclick="anual()">Anual</button><br>
+      <p id="p_resultado"></p>
+    </div>
+  </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  function mensal() {
+    var kilos = Number(input_kg.value);
+    var precoKilo = Number(input_valor.value);
+    var viagem = Number(input_viagem.value);
+    var valorPorViagem = kilos * precoKilo;
+    var faturamentoTotal = valorPorViagem * viagem;
+    var perda = faturamentoTotal * 0.30;
+    var prejuizo = faturamentoTotal - perda;
+
+    if (kilos > 0) {
+      if (precoKilo > 0) {
+        if (viagem > 0) {
+          p_resultado.innerHTML = `Com estes dados, vocês terá um faturamento por viagem de <b>R$${valorPorViagem}</b> e fazendo ${viagem} viagens por mês, obterá um lucro bruto de <b>R$${faturamentoTotal}</b>, entretanto sem a expertise que a <b style = color :#B23030>QualityBeef</b> fornecerá para resolver o monitoramento de temperatura em transportes frigoríficos ,sua empresa apenas faturará <b style = color:red>R$${prejuizo}</b> perdendo cerca de <b>R$${perda}</b> ,ou seja , <b>30%</b> a menos de faturamento`
+        }
+      }
+    }
+  }
+  function semestral() {
+    var kilos = Number(input_kg.value);
+    var precoKilo = Number(input_valor.value);
+    var viagem = Number(input_viagem.value);
+    var valorPorViagem = kilos * precoKilo;
+    var faturamentoTotal = valorPorViagem * viagem * 6;
+    var perda = faturamentoTotal * 0.30;
+    var prejuizo = faturamentoTotal - perda;
+
+    if (kilos > 0) {
+      if (precoKilo > 0) {
+        if (viagem > 0) {
+          p_resultado.innerHTML = `Com estes dados, vocês terá um faturamento por viagem de <b>R$${valorPorViagem}</b> e fazendo ${viagem} viagens por mês, em 6 meses, obterá um lucro bruto  de <b>R$${faturamentoTotal}</b>, entretanto sem a expertise que a <b style = color :#B23030>QualityBeef</b> fornecerá para resolver o monitoramento de temperatura em transportes frigoríficos ,sua empresa apenas faturará <b style = color:red>R$${prejuizo}</b> perdendo cerca de <b>R$${perda}</b> ,ou seja , <b>30%</b> a menos de faturamento`
+        }
+      }
+    }
+  }
+  function anual() {
+    var kilos = Number(input_kg.value);
+    var precoKilo = Number(input_valor.value);
+    var viagem = Number(input_viagem.value);
+    var valorPorViagem = kilos * precoKilo;
+    var faturamentoTotal = valorPorViagem * viagem * 12;
+    var perda = faturamentoTotal * 0.30;
+    var prejuizo = faturamentoTotal - perda;
+
+    if (kilos > 0) {
+      if (precoKilo > 0) {
+        if (viagem > 0) {
+          p_resultado.innerHTML = `Com estes dados, vocês terá um faturamento por viagem de <b>R$${valorPorViagem}</b> e fazendo ${viagem} por  mês, em um ano, deveria obter um lucro bruto de <b>R$${faturamentoTotal}</b>, entretanto sem a expertise que a <b style = color :#B23030>QualityBeef</b> fornecerá para resolver o monitoramento de temperatura em transportes frigoríficos ,sua empresa apenas faturará <b style = color:red>R$${prejuizo}</b> perdendo cerca de <b>R$${perda}</b> ,ou seja , <b>30%</b> a menos de faturamento`
+        }
+      }
+    }
+  }
+
+
+</script>
